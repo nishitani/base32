@@ -136,7 +136,7 @@ public class Base32 {
 		case 'i':
 		case 'o':
 		}
-		return -1;
+		return 0;
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class Base32 {
 		case 1:
 			return new String(Arrays.copyOf(result, result.length - 6));
 		case 2:
-			return new String(Arrays.copyOf(result, result.length - 5));
+			return new String(Arrays.copyOf(result, result.length - 4));
 		case 3:
 			return new String(Arrays.copyOf(result, result.length - 3));
 		case 4:
@@ -221,9 +221,9 @@ public class Base32 {
 		case 2:
 			return Arrays.copyOf(result, result.length - 4);
 		case 3:
-			return Arrays.copyOf(result, result.length - 3);
-		case 4:
 			return null;
+		case 4:
+			return Arrays.copyOf(result, result.length - 3);
 		case 5:
 			return Arrays.copyOf(result, result.length - 2);
 		case 6:
